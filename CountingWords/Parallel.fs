@@ -154,7 +154,5 @@ module private Impl =
         |> chartFromDict
         |> topWords 10
     
-//let processStream stream = Impl.processStream (2000 * 1024) stream
-
 let processStream = Impl.processStream
 

@@ -9,15 +9,6 @@ module private Impl =
 
     open CountingWords.Common
 
-    // slow, not used
-    let r = new Regex(@"[^a-z]+", RegexOptions.Compiled)
-    let parseWithRegex (text : string) =
-    //    seq { for m in Regex.Matches(text, @"[a-z]+") do for g in m.Groups do yield g.Value }
-    //    seq { for m in r.Split(text) do yield m }
-        r.Split(text).Where(fun (x : string) -> not <| String.IsNullOrEmpty(x))
-
-    let parseText = parseText
-
     let wordChart (words : seq<string>) =
         let d = addWordsToDict (new FreqDict()) words
         d.Select (fun (KeyValue x) -> x)
