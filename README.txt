@@ -17,7 +17,7 @@ On my workstation, which is a Core i5-750 box, the run times (very rough) are as
         Parallel: 3.6s, ~300Mb
 
     moby-dic3.txt, ~500mb:
-        Sequential: 6.3s, ~9Mb
+        Sequential: 64s, ~9Mb
         Parallel: 36s, ~1100Mb
 
 There's an issue with parallel version that given bad luck, input file can be fragmented in such way that there will be a part (usually the last one) that wholly consists of a single word. I didn't handle that case, so there's an assertion that will fail. I'll try to fix it up if I come back later to this.
